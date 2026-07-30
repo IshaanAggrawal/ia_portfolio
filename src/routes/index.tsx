@@ -30,10 +30,10 @@ import interviewerImg from "@/assets/images/proj_interviewer_1785413446348.jpg";
 import astroAgentImg from "@/assets/images/proj_astro_agent_1785413466709.jpg";
 import heroImg from "@/assets/hero-bag.jpg";
 import aboutImg from "@/assets/about-bag.jpg";
-import p1 from "@/assets/p1.jpg";
-import p2 from "@/assets/p2.jpg";
-import p3 from "@/assets/p3.jpg";
-import p4 from "@/assets/p4.jpg";
+import p1 from "@/assets/images/tile_p1_agents_1785413729953.jpg";
+import p2 from "@/assets/images/tile_p2_voice_1785413747050.jpg";
+import p3 from "@/assets/images/tile_p3_rag_1785413764149.jpg";
+import p4 from "@/assets/images/tile_p4_queues_1785413781142.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
