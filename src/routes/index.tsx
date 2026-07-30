@@ -84,9 +84,9 @@ const SOCIAL_LINKS = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/ishaan-aggrawal",
+    url: "https://www.linkedin.com/in/ishaanaggrawal",
     icon: Linkedin,
-    handle: "ishaan-aggrawal",
+    handle: "ishaanaggrawal",
   },
   {
     name: "Email",
@@ -325,6 +325,8 @@ function Index() {
               src={heroImg}
               alt="Ishaan Aggrawal wearing a paper bag mask with X eyes"
               className="mx-auto block w-full max-w-md object-contain"
+              loading="eager"
+              decoding="async"
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
@@ -391,6 +393,7 @@ function Index() {
                 alt="Ishaan Aggrawal profile"
                 className="w-full object-cover rounded-sm border border-border"
                 loading="lazy"
+                decoding="async"
               />
             </Reveal>
             <Reveal delay={0.1}>
