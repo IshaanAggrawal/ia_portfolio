@@ -24,16 +24,16 @@ import {
   Quote,
 } from "lucide-react";
 import { Reveal, CountUp } from "@/components/Reveal";
-const heroImg = "/assets/hero-bag.jpg";
-const aboutImg = "/assets/about-bag.jpg";
-const p1 = "/assets/p1.jpg";
-const p2 = "/assets/p2.jpg";
-const p3 = "/assets/p3.jpg";
-const p4 = "/assets/p4.jpg";
-const voiceAgentImg = "/assets/project-voice.jpg";
-const surveillanceImg = "/assets/project-surveillance.jpg";
-const interviewerImg = "/assets/project-interviewer.jpg";
-const astroAgentImg = "/assets/project-astro.jpg";
+import voiceAgentImg from "@/assets/images/project_voice_agent_1785412186397.jpg";
+import surveillanceImg from "@/assets/images/project_ai_surveillance_1785412197264.jpg";
+import interviewerImg from "@/assets/images/project_ai_interviewer_1785412208464.jpg";
+import astroAgentImg from "@/assets/images/project_astro_agent_1785412219594.jpg";
+import heroImg from "@/assets/hero-bag.jpg";
+import aboutImg from "@/assets/about-bag.jpg";
+import p1 from "@/assets/p1.jpg";
+import p2 from "@/assets/p2.jpg";
+import p3 from "@/assets/p3.jpg";
+import p4 from "@/assets/p4.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -321,16 +321,19 @@ function Index() {
         {/* HERO */}
         <section id="top" className="border-b border-border">
           <div className="relative pt-6">
-            <motion.img
-              src={heroImg}
-              alt="Ishaan Aggrawal wearing a paper bag mask with X eyes"
-              className="mx-auto block w-full max-w-md object-contain"
-              loading="eager"
-              decoding="async"
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            />
+            {heroImg && (
+              <motion.img
+                src={heroImg}
+                alt="Ishaan Aggrawal"
+                className="mx-auto block w-full max-w-md object-contain"
+                loading="eager"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              />
+            )}
             <motion.h1
               className="-mt-10 pb-4 text-center text-4xl font-semibold tracking-tight sm:-mt-14 sm:text-6xl"
               initial={{ opacity: 0, y: 20 }}
@@ -387,15 +390,18 @@ function Index() {
         <section id="about">
           <SectionTitle>About Me</SectionTitle>
           <div className="grid gap-8 border-b border-border px-6 py-14 md:grid-cols-2 md:items-center">
-            <Reveal>
-              <img
-                src={aboutImg}
-                alt="Ishaan Aggrawal profile"
-                className="w-full object-cover rounded-sm border border-border"
-                loading="lazy"
-                decoding="async"
-              />
-            </Reveal>
+            {aboutImg ? (
+              <Reveal>
+                <img
+                  src={aboutImg}
+                  alt="Ishaan Aggrawal profile"
+                  className="w-full object-cover rounded-sm border border-border"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                />
+              </Reveal>
+            ) : null}
             <Reveal delay={0.1}>
               <div className="space-y-4">
                 <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -585,6 +591,7 @@ function Index() {
                       src={p.img}
                       alt={`${p.title} project cover`}
                       loading="lazy"
+                      referrerPolicy="no-referrer"
                       className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
@@ -642,6 +649,7 @@ function Index() {
                     src={astroAgentImg}
                     alt="Featured project preview"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                     className="h-64 w-full object-cover opacity-80 transition-opacity hover:opacity-100 sm:h-80"
                   />
                   <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background via-background/40 to-transparent p-6">
@@ -926,8 +934,24 @@ function Index() {
                 className="mx-auto mt-10 max-w-lg space-y-4"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  e.currentTarget.reset();
-                  alert("Thank you! Your message has been noted.");
+                  const form = e.currentTarget;
+                  const formData = new FormData(form);
+                  const name = formData.get("name")?.toString() || "";
+                  const email = formData.get("email")?.toString() || "";
+                  const subject =
+                    formData.get("subject")?.toString() || "Portfolio Project / Inquiry";
+                  const message = formData.get("message")?.toString() || "";
+
+                  const recipient = "ishaanaggrawal101@gmail.com";
+                  const bodyText = `Hi Ishaan,\n\n${message}\n\nFrom: ${name}\nContact Email: ${email}`;
+
+                  // Construct web Gmail compose link
+                  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+                    recipient,
+                  )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+
+                  // Open Gmail compose tab
+                  window.open(gmailUrl, "_blank");
                 }}
               >
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -1003,6 +1027,7 @@ function Tile({ src, rotate }: { src: string; rotate: number }) {
       alt=""
       aria-hidden
       loading="lazy"
+      referrerPolicy="no-referrer"
       className="h-12 w-16 rounded-md object-cover shadow-lg sm:h-16 sm:w-24"
       style={{ rotate }}
       animate={{ y: [0, -6, 0] }}
