@@ -1,6 +1,6 @@
 {
   "name": "Pixel Perfect Portfolio",
-  "description": "A portfolio application imported from GitHub.",
+  "description": "Portfolio of Ishaan Aggrawal — AI Agents Developer, Full-Stack GenAI & Systems Engineer.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
