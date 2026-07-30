@@ -19,6 +19,9 @@ import {
   CheckCircle2,
   ArrowUpRight,
   Sparkles,
+  Trophy,
+  Zap,
+  Quote,
 } from "lucide-react";
 import { Reveal, CountUp } from "@/components/Reveal";
 import heroImg from "@/assets/hero-bag.jpg";
@@ -27,6 +30,10 @@ import p1 from "@/assets/p1.jpg";
 import p2 from "@/assets/p2.jpg";
 import p3 from "@/assets/p3.jpg";
 import p4 from "@/assets/p4.jpg";
+import voiceAgentImg from "@/assets/images/voice_agent_project_1785407465747.jpg";
+import surveillanceImg from "@/assets/images/surveillance_project_1785407489407.jpg";
+import interviewerImg from "@/assets/images/interviewer_project_1785407504475.jpg";
+import astroAgentImg from "@/assets/images/astro_agent_project_1785407517798.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,6 +62,7 @@ const NAV = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "CP & LeetCode", href: "#cp" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
@@ -135,7 +143,7 @@ const CAPABILITIES = [
 
 const PROJECTS = [
   {
-    img: p1,
+    img: voiceAgentImg,
     title: "Real-Time Voice Calling Agent",
     tag: "Voice AI & WebRTC",
     stack: ["WebRTC", "VAD", "Whisper", "LangChain", "TTS Architecture"],
@@ -145,7 +153,7 @@ const PROJECTS = [
     demo: "https://github.com/IshaanAggrawal",
   },
   {
-    img: p2,
+    img: surveillanceImg,
     title: "Real-Time AI Surveillance System",
     tag: "Computer Vision & Vision LLM",
     stack: ["Next.js", "YOLOv11", "OpenCV", "FastAPI", "Groq Vision"],
@@ -155,7 +163,7 @@ const PROJECTS = [
     demo: "https://github.com/IshaanAggrawal",
   },
   {
-    img: p3,
+    img: interviewerImg,
     title: "AI Interviewer Platform",
     tag: "Full-Stack & Audio Streaming",
     stack: ["Next.js", "Express", "PostgreSQL", "Socket.IO", "BullMQ", "Groq", "AWS S3"],
@@ -165,7 +173,7 @@ const PROJECTS = [
     demo: "https://github.com/IshaanAggrawal",
   },
   {
-    img: p4,
+    img: astroAgentImg,
     title: "AstroAgent",
     tag: "LangGraph Agent & RAG",
     stack: ["LangGraph", "FastAPI", "React+TS", "ChromaDB RAG"],
@@ -427,20 +435,19 @@ function Index() {
             </Reveal>
           </div>
 
-          {/* STATS */}
-          <div className="grid grid-cols-1 divide-y divide-border border-b border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {STATS.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.1}>
-                <div className="py-8 text-center">
-                  <div className="text-4xl font-semibold tracking-tight">
-                    <CountUp to={s.to} suffix={s.suffix} />
-                  </div>
-                  <div className="mt-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    {s.label}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+          {/* MOTIVATIONAL QUOTE */}
+          <div className="border-b border-border bg-secondary/10 px-6 py-10 text-center">
+            <Reveal>
+              <div className="mx-auto max-w-2xl space-y-3">
+                <Quote className="mx-auto h-6 w-6 text-muted-foreground/60" />
+                <p className="text-lg font-medium italic tracking-tight text-foreground sm:text-xl">
+                  "First, solve the problem. Then, write the code."
+                </p>
+                <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                  — John Johnson
+                </p>
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -629,7 +636,7 @@ function Index() {
               <Reveal>
                 <div className="relative overflow-hidden rounded-sm border border-border bg-secondary/30">
                   <img
-                    src={p4}
+                    src={astroAgentImg}
                     alt="Featured project preview"
                     loading="lazy"
                     className="h-64 w-full object-cover opacity-80 transition-opacity hover:opacity-100 sm:h-80"
@@ -675,6 +682,150 @@ function Index() {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </section>
+
+        {/* COMPETITIVE PROGRAMMING & LEETCODE SECTION */}
+        <section id="cp">
+          <SectionTitle>Competitive Programming & DSA</SectionTitle>
+
+          <div className="border-b border-border">
+            <Brackets>
+              <div className="p-6">
+                {/* LeetCode Header Banner */}
+                <Reveal>
+                  <div className="flex flex-col gap-6 rounded-lg border border-border bg-secondary/20 p-6 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Terminal className="h-5 w-5 text-amber-500" />
+                        <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                          LeetCode Profile & Ratings
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
+                        330+ Problems Solved | Max Rating ~1600
+                      </h3>
+                      <p className="max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                        Consistent algorithmic problem solver with strong proficiency in Data
+                        Structures, Graph Algorithms, Dynamic Programming, and High-Performance
+                        Optimizations.
+                      </p>
+                    </div>
+
+                    <a
+                      href="https://leetcode.com/u/IshaanAggrawal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex shrink-0 items-center gap-2 rounded-md border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-xs font-semibold text-amber-500 transition-colors hover:bg-amber-500/20"
+                    >
+                      <span>View LeetCode Profile</span>
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </Reveal>
+
+                {/* Problem Solving Breakdown Grid */}
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  <Reveal delay={0.05}>
+                    <div className="h-full rounded-md border border-border bg-background p-5 transition-colors hover:border-foreground/30">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono text-muted-foreground">Core Topic</span>
+                        <Zap className="h-4 w-4 text-amber-500" />
+                      </div>
+                      <h4 className="mt-2 text-base font-semibold">Dynamic Programming</h4>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        Memoization, Tabulation, Knapsack, Bitmask DP, and Sequence Alignment.
+                      </p>
+                      <div className="mt-3 flex items-center gap-2 text-xs font-mono text-foreground">
+                        <span className="rounded bg-secondary px-2 py-0.5">
+                          Medium / Hard Focus
+                        </span>
+                      </div>
+                    </div>
+                  </Reveal>
+
+                  <Reveal delay={0.1}>
+                    <div className="h-full rounded-md border border-border bg-background p-5 transition-colors hover:border-foreground/30">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono text-muted-foreground">Core Topic</span>
+                        <Code2 className="h-4 w-4 text-foreground" />
+                      </div>
+                      <h4 className="mt-2 text-base font-semibold">Trees & Graph Theory</h4>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        BFS/DFS, Dijkstra, Topological Sort, Union-Find (Disjoint Set), and LCA.
+                      </p>
+                      <div className="mt-3 flex items-center gap-2 text-xs font-mono text-foreground">
+                        <span className="rounded bg-secondary px-2 py-0.5">
+                          Shortest Path & Trees
+                        </span>
+                      </div>
+                    </div>
+                  </Reveal>
+
+                  <Reveal delay={0.15}>
+                    <div className="h-full rounded-md border border-border bg-background p-5 transition-colors hover:border-foreground/30">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono text-muted-foreground">Core Topic</span>
+                        <Trophy className="h-4 w-4 text-amber-500" />
+                      </div>
+                      <h4 className="mt-2 text-base font-semibold">Two Pointers & Binary Search</h4>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        Sliding Window, Binary Search on Answer Space, Monotonic Queues/Stacks.
+                      </p>
+                      <div className="mt-3 flex items-center gap-2 text-xs font-mono text-foreground">
+                        <span className="rounded bg-secondary px-2 py-0.5">Optimal Space O(1)</span>
+                      </div>
+                    </div>
+                  </Reveal>
+                </div>
+
+                {/* Academic & Contest Standings */}
+                <div className="mt-8 rounded-md border border-border bg-secondary/10 p-5">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                    Contest Standings & Academic Rigor
+                  </h4>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="flex items-center gap-3">
+                      <Award className="h-4 w-4 shrink-0 text-foreground" />
+                      <div>
+                        <div className="text-sm font-semibold">97.81 Percentile</div>
+                        <div className="text-xs text-muted-foreground">
+                          JEE Mains Physics & Maths
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <Trophy className="h-4 w-4 shrink-0 text-amber-500" />
+                      <div>
+                        <div className="text-sm font-semibold">Top 1% Rank</div>
+                        <div className="text-xs text-muted-foreground">
+                          IIT Kharagpur DS Hackathon
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <Award className="h-4 w-4 shrink-0 text-foreground" />
+                      <div>
+                        <div className="text-sm font-semibold">3rd Runner-Up</div>
+                        <div className="text-xs text-muted-foreground">CodeVeda 2025 Hackathon</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <Trophy className="h-4 w-4 shrink-0 text-amber-500" />
+                      <div>
+                        <div className="text-sm font-semibold">Finalist</div>
+                        <div className="text-xs text-muted-foreground">
+                          IITM Gwalior National Hackathon
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Brackets>
           </div>
         </section>
 
