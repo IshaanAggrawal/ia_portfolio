@@ -24,10 +24,10 @@ import {
   Quote,
 } from "lucide-react";
 import { Reveal, CountUp } from "@/components/Reveal";
-import voiceAgentImg from "@/assets/images/project_voice_agent_1785412186397.jpg";
-import surveillanceImg from "@/assets/images/project_ai_surveillance_1785412197264.jpg";
-import interviewerImg from "@/assets/images/project_ai_interviewer_1785412208464.jpg";
-import astroAgentImg from "@/assets/images/project_astro_agent_1785412219594.jpg";
+import voiceAgentImg from "@/assets/images/proj_voice_agent_1785413404432.jpg";
+import surveillanceImg from "@/assets/images/proj_surveillance_1785413424940.jpg";
+import interviewerImg from "@/assets/images/proj_interviewer_1785413446348.jpg";
+import astroAgentImg from "@/assets/images/proj_astro_agent_1785413466709.jpg";
 import heroImg from "@/assets/hero-bag.jpg";
 import aboutImg from "@/assets/about-bag.jpg";
 import p1 from "@/assets/p1.jpg";
