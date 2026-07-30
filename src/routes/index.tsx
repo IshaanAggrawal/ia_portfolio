@@ -30,10 +30,10 @@ import p1 from "@/assets/p1.jpg";
 import p2 from "@/assets/p2.jpg";
 import p3 from "@/assets/p3.jpg";
 import p4 from "@/assets/p4.jpg";
-import voiceAgentImg from "@/assets/images/voice_agent_project_1785407465747.jpg";
-import surveillanceImg from "@/assets/images/surveillance_project_1785407489407.jpg";
-import interviewerImg from "@/assets/images/interviewer_project_1785407504475.jpg";
-import astroAgentImg from "@/assets/images/astro_agent_project_1785407517798.jpg";
+import voiceAgentImg from "@/assets/project-voice.jpg";
+import surveillanceImg from "@/assets/project-surveillance.jpg";
+import interviewerImg from "@/assets/project-interviewer.jpg";
+import astroAgentImg from "@/assets/project-astro.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
