@@ -24,16 +24,16 @@ import {
   Quote,
 } from "lucide-react";
 import { Reveal, CountUp } from "@/components/Reveal";
-const heroImg = "/assets/hero-bag.jpg";
-const aboutImg = "/assets/about-bag.jpg";
-const p1 = "/assets/p1.jpg";
-const p2 = "/assets/p2.jpg";
-const p3 = "/assets/p3.jpg";
-const p4 = "/assets/p4.jpg";
-const voiceAgentImg = "/assets/project-voice.jpg";
-const surveillanceImg = "/assets/project-surveillance.jpg";
-const interviewerImg = "/assets/project-interviewer.jpg";
-const astroAgentImg = "/assets/project-astro.jpg";
+import heroImg from "@/assets/hero-bag.jpg";
+import aboutImg from "@/assets/about-bag.jpg";
+import p1 from "@/assets/p1.jpg";
+import p2 from "@/assets/p2.jpg";
+import p3 from "@/assets/p3.jpg";
+import p4 from "@/assets/p4.jpg";
+import voiceAgentImg from "@/assets/project-voice.jpg";
+import surveillanceImg from "@/assets/project-surveillance.jpg";
+import interviewerImg from "@/assets/project-interviewer.jpg";
+import astroAgentImg from "@/assets/project-astro.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
