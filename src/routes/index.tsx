@@ -290,34 +290,34 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 function Index() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
-      <div className="mx-auto w-full max-w-4xl border-x border-border">
-        {/* NAV */}
-        <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
-          <nav className="flex items-center justify-between px-5 py-3">
-            <a href="#top" className="text-base font-semibold tracking-tight">
-              Ishaan Aggrawal
-            </a>
-            <ul className="hidden gap-6 md:flex">
-              {NAV.map((n) => (
-                <li key={n.href}>
-                  <a
-                    href={n.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    {n.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="#contact"
-              className="rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground transition-transform hover:scale-[1.04]"
-            >
-              Let's Talk
-            </a>
-          </nav>
-        </header>
+      {/* NAV - FULL LENGTH */}
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/85 backdrop-blur-md">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5 sm:px-10">
+          <a href="#top" className="text-base font-semibold tracking-tight">
+            Ishaan Aggrawal
+          </a>
+          <ul className="hidden gap-8 md:flex">
+            {NAV.map((n) => (
+              <li key={n.href}>
+                <a
+                  href={n.href}
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {n.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#contact"
+            className="rounded-full bg-primary px-5 py-2 text-xs font-semibold tracking-wide text-primary-foreground transition-transform hover:scale-[1.04]"
+          >
+            Let's Talk
+          </a>
+        </nav>
+      </header>
 
+      <div className="mx-auto w-full max-w-7xl border-x border-border">
         {/* HERO */}
         <section id="top" className="border-b border-border">
           <div className="relative pt-6">
